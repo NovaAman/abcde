@@ -23,27 +23,28 @@ body{
 }
 
 .logo{
-    margin-top: 8px;
+    margin-top: 12px;
     width: 160px;
     display: flex;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
 
 }
 .power{
     margin-top: 0px;
     width: 250px;
+    margin-bottom: 10px;
     
 
 }
 .coin{
     margin-top: 0px;
-    width: 200px;
+    width: 250px;
     margin-left: 100;
     margin-bottom: 10px;
 }
 .bar{
-    width: 250px;
-    margin-bottom: 8px;
+    width: 400px;
+    margin-bottom: 30px;
 
 }
 
