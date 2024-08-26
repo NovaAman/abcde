@@ -17,8 +17,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
     margin: 0;
 
 }
