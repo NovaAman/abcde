@@ -4,6 +4,7 @@ body{
       align-items: center;
       justify-content: center;
       margin: 0;
+      background-color: black;
 
     
 }
@@ -15,8 +16,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 7px;
+    padding-right: 7px;
     margin: 0;
 
 }
