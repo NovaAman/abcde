@@ -1,0 +1,54 @@
+body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+
+    
+}
+
+.container{
+    width:700;
+    height:300;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.logo{
+    margin-top: 8px;
+    width: 160px;
+    display: flex;
+    margin-bottom: 0px;
+
+}
+.power{
+    margin-top: 0px;
+    width: 250px;
+    
+
+}
+.coin{
+    margin-top: 0px;
+    width: 200px;
+    margin-left: 100;
+    margin-bottom: 10px;
+}
+.bar{
+    width: 250px;
+    margin-bottom: 8px;
+
+}
+
+h2{
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 0;
+}

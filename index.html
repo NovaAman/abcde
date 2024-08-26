@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css"/>
+
+    <style>
+      #counter {
+      font-size: 3em;
+      font-weight: bolder;
+      margin-top: 0px;
+      color: #ffffff;
+      font-family: sans-serif;
+    }
+
+    #startButton{
+     z-index: 1;
+    }
+
+    .delete{
+      visibility: hidden;
+    }
+    h3{
+      color: white;
+      margin-bottom: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: lighter;
+      font-size: 12px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <img class="logo" src="./head.png"/>
+      <img class="power" src="./power.png"/>
+      <div id="counter">0</div>
+      <h3>Click the coin to start mining</h3>
+      <butto class="delete" id="starButton">Start Mining</butto
+      <a href="#" onclick="Start Mining()"> <img id="startButton"class="coin button" src="./coin.png" alt="clickable image"</a>
+      <img class="bar" src="./bar.png"/>
+      </div>
+
+
+
+
+
+
+
+
+    <script>
+      let counter = 0; 
+      let intervalId;
+      let referralCode = generateReferralCode(); 
+  
+      const counterElement = document.getElementById('counter');
+      const startButton = document.getElementById('startButton');
+      const referralButton = document.getElementById('referralButton');
+      const referralInput = document.getElementById('referralInput');
+      const applyReferral = document.getElementById('applyReferral');
+      const copyButton = document.getElementById('copyButton');
+  
+      // Load counter from local storage on page load
+      if (localStorage.getItem('counter')) {
+        counter = parseInt(localStorage.getItem('counter'), 10); 
+        counterElement.textContent = counter.toLocaleString(); // Add commas
+      }
+  
+      // Start Mining Functionality
+      startButton.addEventListener('click', () => {
+        if (intervalId) {
+          clearInterval(intervalId); 
+          intervalId = null;         
+          startButton.textContent = 'Start Mining';
+        } else {
+          intervalId = setInterval(() => {
+            counter++;
+            counterElement.textContent = counter.toLocaleString(); // Add commas
+            localStorage.setItem('counter', counter);
+          }, 0.1);
+          startButton.textContent = 'Stop Mining';
+        }
+      });
+  
+      // Referral Code Functionality
+      referralButton.addEventListener('click', () => {
+        alert(`Your referral code is: ${referralCode}`);
+      });
+  
+      applyReferral.addEventListener('click', () => {
+        const enteredCode = referralInput.value.trim();
+        if (enteredCode === referralCode) {
+          alert('Referral code applied successfully! You both received 10,000 points.');
+          counter += 10000;
+          counterElement.textContent = counter.toLocaleString(); // Add commas
+          localStorage.setItem('counter', counter);
+        } else {
+          alert('Invalid referral code.');
+        }
+      });
+  
+      // Copy Code Functionality (Updated)
+      copyButton.addEventListener('click', () => {
+        const tempInput = document.createElement('input');
+        tempInput.value = referralCode;
+        document.body.appendChild(tempInput);
+  
+        tempInput.select();
+        document.execCommand('copy');
+  
+        document.body.removeChild(tempInput);
+  
+        alert('Referral code copied to clipboard!');
+      });
+  
+      function generateReferralCode() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let referralCode = '';
+        for (let i = 0; i < 10; i++) {
+          referralCode += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return referralCode;
+      }
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</body>
+</html>
