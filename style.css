@@ -10,7 +10,6 @@ body{
 
 .container{
     width:100vw;
-    height: 1200px;
     background-color: black;
     display: flex;
     flex-direction: column;
