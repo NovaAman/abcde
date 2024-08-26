@@ -10,7 +10,7 @@ body{
 
 .container{
     width:100vw;
-    height: 1980px;
+    height: 1200px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@ body{
     margin-bottom: 10px;
 }
 .bar{
-    width: 400px;
+    width: 200px;
     margin-bottom: 30px;
 
 }
