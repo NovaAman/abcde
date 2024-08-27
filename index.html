@@ -7,6 +7,61 @@
     <link rel="stylesheet" href="./style.css"/>
 
     <style>
+
+/* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            position: relative; /* For positioning the loading screen */
+        }
+
+        /* Loading Screen Styles */
+        .loading-screen {
+            position: fixed; /* Fix to viewport */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full width */
+            height: 100vh; /* Full height */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            display: flex; /* Center the spinner */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            z-index: 9999; /* Above other content */
+        }
+
+        .spinner {
+            border: 8px solid lightgray; /* Base circle */
+            border-top: 8px solid #3498db; /* Spinner color */
+            border-radius: 50%; /* Circle */
+            width: 50px; /* Spinner width */
+            height: 50px; /* Spinner height */
+            animation: spin 1s linear infinite; /* Spin animation */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Main content area */
+        .content {
+            display: none; /* Hide main content initially */
+            text-align: center;
+            padding: 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+
       #counter {
       font-size: 3em;
       font-weight: bolder;
@@ -35,6 +90,12 @@
     </style>
 </head>
 <body>
+<div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+        <h1>SquirrelTon</h1>
+    </div>
+
+
     <div class="container">
       <img class="logo" src="./head.png"/>
       <img class="power" src="./power.png"/>
@@ -125,6 +186,34 @@
         }
         return referralCode;
       }
+    </script>
+
+<script>
+        // Select elements
+        const loadingScreen = document.getElementById('loadingScreen');
+        const appContent = document.getElementById('appContent');
+
+        // Function to simulate loading resources
+        function loadWeb3Resources() {
+            return new Promise((resolve) => {
+                // Simulate fetching resources with a timeout
+                setTimeout(() => {
+                    // Here you can place your actual web3 data loading logic
+                    // For demonstration, we just wait for 3 seconds
+                    resolve();
+                }, 3000); // Simulate 3 seconds of loading time
+            });
+        }
+
+        // Initialize the app
+        async function initializeApp() {
+            await loadWeb3Resources(); // Wait for the resources to load
+            loadingScreen.style.display = 'none'; // Hide loading screen
+            appContent.style.display = 'block'; // Show app content
+        }
+
+        // Start the app initialization
+        initializeApp();
     </script>
   
 
